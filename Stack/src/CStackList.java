@@ -1,4 +1,3 @@
-
 public class CStackList {
 	
 	private Node top;
