@@ -1,2 +1,3 @@
-# AlgorithmStudy
-Implementation of Algorithm to a personal study using Java language
+# Java Study
+1. Implements Algorithm using Java language
+2. Java Socket Programming
