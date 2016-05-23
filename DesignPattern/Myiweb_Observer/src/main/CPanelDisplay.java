@@ -1,4 +1,4 @@
-package display;
+package main;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -8,9 +8,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import subject.ClassData;
-
-public class PanelDisplay implements Observer, DisplayElement {
+public class CPanelDisplay implements Observer, IDisplayElement {
 
 	private Observable observable;
 	private String subjectName;
@@ -20,21 +18,22 @@ public class PanelDisplay implements Observer, DisplayElement {
 	private String time;
 	private String room;
 	
-	public PanelDisplay(Observable observable) {
+	public CPanelDisplay(Observable observable) {
+		// set observer
 		this.observable = observable;
 		observable.addObserver(this);
 	}
 
 	@Override
 	public void update(Observable ob, Object arg) {
-		if(ob instanceof ClassData) {
-			ClassData classData = (ClassData) ob;
-			this.subjectName = classData.getSubjectName();
-			this.classNumber = classData.getClassNumber();
-			this.professor = classData.getProfessor();
-			this.studentNumber = classData.getStudentNumber();
-			this.time = classData.getTime();
-			this.room = classData.getRoom();
+		if(ob instanceof CClassData) {
+			CClassData cClassData = (CClassData) ob;
+			this.subjectName = cClassData.getSubjectName();
+			this.classNumber = cClassData.getClassNumber();
+			this.professor = cClassData.getProfessor();
+			this.studentNumber = cClassData.getStudentNumber();
+			this.time = cClassData.getTime();
+			this.room = cClassData.getRoom();
 			
 			this.display();
 		}

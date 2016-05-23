@@ -1,8 +1,8 @@
-package subject;
+package main;
 
 import java.util.Observable;
 
-public class ClassData extends Observable {
+public class CClassData extends Observable {
 
 	// attribute
 	private String subjectName;
@@ -21,8 +21,8 @@ public class ClassData extends Observable {
 	public String getRoom() {return room;}
 	
 	// constructors
-	public ClassData(){}
-	public ClassData(String subjectName, String classNumber, String professor, String studentNumber, String time, String room) {
+	public CClassData(){}
+	public CClassData(String subjectName, String classNumber, String professor, String studentNumber, String time, String room) {
 		this.subjectName = subjectName;
 		this.classNumber = classNumber;
 		this.professor = professor;

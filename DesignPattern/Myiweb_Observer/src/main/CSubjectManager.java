@@ -2,9 +2,7 @@ package main;
 
 import java.util.*;
 
-import subject.SubjectData;
-
-public class SubjectManager {
+public class CSubjectManager {
 
 	Vector vector = new Vector();
 	
@@ -17,7 +15,7 @@ public class SubjectManager {
 		name = data.split(" ")[1];
 		grade = Integer.parseInt(data.split(" ")[2]);
 
-		SubjectData subject = new SubjectData();
+		CSubjectData subject = new CSubjectData();
 		subject.setSubjectNumber(number);
 		subject.setName(name);
 		subject.setGrade(grade);
@@ -27,14 +25,14 @@ public class SubjectManager {
 	
 	public void showsubjectList() {
 		for(int i=0; i<vector.size(); i++) {
-			System.out.println(((SubjectData)vector.get(i)).getSubjectNumber()+" "+((SubjectData)vector.get(i)).getName()+" "+((SubjectData)vector.get(i)).getGrade());
+			System.out.println(((CSubjectData)vector.get(i)).getSubjectNumber()+" "+((CSubjectData)vector.get(i)).getName()+" "+((CSubjectData)vector.get(i)).getGrade());
 		}
 	}
 	
-	public SubjectData getsubject(String subjectNumber) {
+	public CSubjectData getsubject(String subjectNumber) {
 		for(int i=0; i<vector.size(); i++) {
-			if(((SubjectData)vector.get(i)).getSubjectNumber().equals(subjectNumber)) {
-				return (SubjectData)vector.get(i);
+			if(((CSubjectData)vector.get(i)).getSubjectNumber().equals(subjectNumber)) {
+				return (CSubjectData)vector.get(i);
 			}
 		}
 		return null;

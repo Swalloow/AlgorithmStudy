@@ -1,11 +1,9 @@
-package display;
+package main;
 
 import java.util.Observable;
 import java.util.Observer;
 
-import subject.ClassData;
-
-public class ConsoleDisplay implements Observer, DisplayElement {
+public class CConsoleDisplay implements Observer, IDisplayElement {
 
 	private Observable observable;
 	private String subjectName;
@@ -15,21 +13,22 @@ public class ConsoleDisplay implements Observer, DisplayElement {
 	private String time;
 	private String room;
 	
-	public ConsoleDisplay(Observable observable) {
+	public CConsoleDisplay(Observable observable) {
+		// set observer
 		this.observable = observable;
 		observable.addObserver(this);
 	}
 
 	@Override
 	public void update(Observable ob, Object arg) {
-		if(ob instanceof ClassData) {
-			ClassData classData = (ClassData) ob;
-			this.subjectName = classData.getSubjectName();
-			this.classNumber = classData.getClassNumber();
-			this.professor = classData.getProfessor();
-			this.studentNumber = classData.getStudentNumber();
-			this.time = classData.getTime();
-			this.room = classData.getRoom();
+		if(ob instanceof CClassData) {
+			CClassData cClassData = (CClassData) ob;
+			this.subjectName = cClassData.getSubjectName();
+			this.classNumber = cClassData.getClassNumber();
+			this.professor = cClassData.getProfessor();
+			this.studentNumber = cClassData.getStudentNumber();
+			this.time = cClassData.getTime();
+			this.room = cClassData.getRoom();
 			
 			this.display();
 		}

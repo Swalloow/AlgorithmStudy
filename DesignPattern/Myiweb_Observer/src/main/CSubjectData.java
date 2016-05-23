@@ -1,6 +1,6 @@
-package subject;
+package main;
 
-public class SubjectData {
+public class CSubjectData {
 	
 	// attribute
 	private String subjectNumber;

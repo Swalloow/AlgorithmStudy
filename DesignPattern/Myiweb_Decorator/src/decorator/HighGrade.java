@@ -1,13 +1,10 @@
 package decorator;
 
-import model.Milege;
-
 public class HighGrade extends ExtraDecorator {
-
-	private Milege milege;
 	
 	public HighGrade(Milege milege) {
 		this.milege = milege;
+		this.extraPoint = 10;
 	}
 	
 	@Override
@@ -19,7 +16,6 @@ public class HighGrade extends ExtraDecorator {
 	@Override
 	public int myMilege() {
 		// add high grade milege
-		return milege.myMilege() + 10;
+		return milege.myMilege() + extraPoint;
 	}
-
 }

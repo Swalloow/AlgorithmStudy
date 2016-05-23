@@ -1,24 +1,21 @@
 package decorator;
 
-import model.Milege;
-
 public class AdditionalPeriod extends ExtraDecorator {
 
-	private Milege milege;
-	
 	public AdditionalPeriod(Milege milege) {
 		this.milege = milege;
+		this.extraPoint = 20;
 	}
 	
 	@Override
 	public String getDescription() {
-		// add additional period description
+		// add high grade description
 		return milege.getDescription() + ", additional period";
 	}
 
 	@Override
 	public int myMilege() {
-		// add additional period milege
-		return milege.myMilege() + 20;
+		// add high grade milege
+		return milege.myMilege() + extraPoint;
 	}
 }
