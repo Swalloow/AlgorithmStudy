@@ -45,10 +45,10 @@ thread.setPriority(Thread.MIN_PRIORITY);
 동시에 공유 객체에 접근한다면 동시성(Concurrency) 문제가 발생함
 동시성 문제를 해결하기 위해서는 멀티 쓰레드에서 하나의 쓰레드만 실행할 수 있는
 임계 영역(Critical Section)을 지정해야하는데,
-자바에서는 이를 제어하기 위해 `동기화(Syncronized) 메서드`를 제공
+자바에서는 이를 제어하기 위해 `동기화(Synchronized) 메서드`를 제공
 
 ```java
-public syncronized void method() {
+public synchronized void method() {
   // Critical Section
 }
 ```
@@ -56,7 +56,7 @@ public syncronized void method() {
 ```java
 public void method() {
   ...
-  syncronized(Object obj) {
+  synchronized(Object obj) {
     // Critical Section
   }
   ...
@@ -105,7 +105,7 @@ public void run() {
 
 동기화 메서드에서 제어하는 예제는 다음과 같음
 ```java
-public syncronized void method {
+public synchronized void method {
   notify();
   try {
     wait();
