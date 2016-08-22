@@ -9,6 +9,13 @@ Java 5부터 Generic 타입이 추가되었음
  - 컴파일 시 강한 타입 체크를 할 수 있음
  - 타입 변환(Casting)을 제거
 
+## 제한된 타입 파라메터
+```java
+public <T> method() {}
+public <T extends Number> method() {}
+public <T super Number> method() {}
+```
+
 ## class<T>, interface<T>
 
 ## Wildcard Type <?>
