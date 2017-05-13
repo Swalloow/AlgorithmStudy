@@ -13,6 +13,9 @@ public class PageController {
 
 	@Value("${pageController.msg}")
 	private String pageControllerMsg;
+
+	@Value("${my.secret}")
+	private String mySecret;
 //	private NotificationService notificationService;
 //
 //	@Autowired
@@ -23,6 +26,6 @@ public class PageController {
 	@RequestMapping("/")
     public String home() {
 //        return notificationService.toString();
-		return pageControllerMsg;
+		return mySecret;
     }
 }
