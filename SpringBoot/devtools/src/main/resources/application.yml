@@ -1,0 +1,4 @@
+pageController:
+  msg: "Hello from YAML Config"
+  foo: "foo"
+  bar: "bar"
